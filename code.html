@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="code.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate your own qr code</h1>
+          <input type="text" placeholder="enter text or url" id="box">
+        <div id="img-box">
+          <img src="" id="img">
+        </div>
+          <button id="btn">
+            Generate Qr code
+          </button>
+      </div>
+        <script>
+          const api="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=";
+          const btn= document.getElementById("btn")
+          const inputbox= document.getElementById("box");
+          const imgbox= document.getElementById("img-box");
+          const img= document.getElementById("img");
+          function generate(){
+            if(inputbox.value.length > 0){
+              img.src= "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + inputbox.value;
+              imgbox.classList.add("show");
+            } 
+            else{
+              inputbox.classList.add("shake")
+              setTimeout(()=>{
+                input.classList.remove("shake"); 
+              },10000)
+            }
+          }
+          btn.addEventListener('click',()=>{
+            generate();
+          });
+        </script>
+</body>
+</html>

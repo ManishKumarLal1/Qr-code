@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+  h1,h3{
+    color: #09ec09;
+    text-align: center;
+  }
+  
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    flex-direction: column;
+    border: 2px solid #09ec09;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  .container input{
+    height:  50px;
+    width: 100%;
+    margin: 20px 0 10px;
+    border-radius: 10px;
+    border: 2px solid #09ec09;
+    background-color: transparent;
+    padding: 10px;
+    color: #09ec09;
+  }
+  .container button{
+    background-color: transparent;
+    outline: none;
+    color: #09ec09;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #09ec09;
+  }
+  #img-box{
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    
+  }
+  #img-box img{
+    width:100%;
+    padding: 10px;
+  }
+  
+  #img-box.show{
+    max-height: 200px;
+    margin: 10px auto;
+    border: 2px solid #09ec09;
+    transition: 1s ease-in;
+    
+  }
+  .shake{
+    animation: shake 1s linear 10;
+  }
+  
+  
+  @keyframes shake{
+    0%{
+      transform: translateX(0px);
+    }
+    25%{
+      transform: translateX(-2px);
+    }
+    50%{
+      transform: translateX(0px);
+    }
+    75%{
+      transform: translateX(2px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+  }
